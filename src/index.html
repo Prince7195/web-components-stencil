@@ -7,9 +7,47 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Web Components Stencil</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .side-nav ul {
+        list-style: none;
+      }
+
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: #000;
+      }
+    </style>
 
     <script type="module" src="/build/web-components-stencil.esm.js"></script>
     <script nomodule src="/build/web-components-stencil.js"></script>
   </head>
-  <body></body>
+  <body>
+    <button id="side-drawer-btn">Open Side Menu</button>
+    <uc-side-drawer heading="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">A Link</a></li>
+          <li><a href="/">Another Link</a></li>
+          <li><a href="/">A Third Link</a></li>
+        </ul>
+      </nav>
+    </uc-side-drawer>
+    <script>
+      const sideDrawerBtn = document.querySelector("#side-drawer-btn");
+      const sideDrawer = document.querySelector("uc-side-drawer");
+      sideDrawerBtn.addEventListener("click", () => {
+        if (!sideDrawer.opened) {
+          sideDrawer.open();
+        }
+      });
+    </script>
+  </body>
 </html>
