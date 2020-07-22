@@ -30,7 +30,7 @@
     <script nomodule src="/build/web-components-stencil.js"></script>
   </head>
   <body>
-    <button id="side-drawer-btn">Open Side Menu</button>
+    <!-- <button id="side-drawer-btn">Open Side Menu</button>
     <uc-side-drawer heading="Main Menu">
       <nav class="side-nav">
         <ul>
@@ -39,15 +39,22 @@
           <li><a href="/">A Third Link</a></li>
         </ul>
       </nav>
-    </uc-side-drawer>
+    </uc-side-drawer> -->
+    <uc-stock-price stock-symbol="AAPL"></uc-stock-price>
+    <uc-stock-finder></uc-stock-finder>
     <script>
-      const sideDrawerBtn = document.querySelector("#side-drawer-btn");
-      const sideDrawer = document.querySelector("uc-side-drawer");
-      sideDrawerBtn.addEventListener("click", () => {
-        if (!sideDrawer.opened) {
-          sideDrawer.open();
-        }
-      });
+      // const sideDrawerBtn = document.querySelector("#side-drawer-btn");
+      // const sideDrawer = document.querySelector("uc-side-drawer");
+      // sideDrawerBtn.addEventListener("click", () => {
+      //   if (!sideDrawer.opened) {
+      //     sideDrawer.open();
+      //   }
+      // });
+
+      // const stockFinderEl = document.querySelector("uc-stock-finder");
+      // stockFinderEl.addEventListener("ucSymbolSelected", (event) => {
+      //   console.log(event.detail);
+      // });
     </script>
   </body>
 </html>
